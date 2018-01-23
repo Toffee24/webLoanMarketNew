@@ -47,7 +47,7 @@
   import PullTo from 'vue-pull-to'
   //  const SERVERPATH = 'http://116.62.64.190:8080' //线上
   const SERVERPATH = 'http://116.62.146.57:8080/mobile'; //借款端测试
-  //  const SERVERPATH = 'http://192.168.199.166:8099' //胡磊
+  //    const SERVERPATH = 'http://192.168.199.166:8099' //胡磊
   let TAB_NAME_FORK = []
   export default {
     name: 'v-recommend',
@@ -61,21 +61,18 @@
       })
       //链接统计接口
       let channel = this.GetQueryString('channel')
-      axios.post(SERVERPATH + '/api/app/next/common/participate/wap/source/link/statistics', {
-        from: channel
-      }, {
+      axios({
+        method: 'post',
+        url: SERVERPATH + '/api/app/next/common/participate/wap/source/link/statistics',
+        params: {
+          from: channel
+        },
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-type': 'application/x-www-form-urlencoded'
         }
+      }).then(function (response) {
+      }).catch(function (error) {
       })
-        .then(function (response) {
-          // if (response.data.code == 626) {
-          console.log(response);
-          // }
-        }).catch(function (error) {
-        console.log(error);
-      })
-
     },
     data() {
       return {
@@ -92,7 +89,7 @@
             if (TAB_NAME_FORK[index]) {
               return `<div class="${className}">${TAB_NAME_FORK[index]}</div>`;
             } else {
-              return `<div class="${className}"></div>`;
+              return `<div class="${className}">加载中...</div>`;
             }
           },
           onSlideChangeStart: (swiper) => {

@@ -45,8 +45,8 @@
 <script>
   import axios from 'axios'
   import PullTo from 'vue-pull-to'
-  //  const SERVERPATH = 'http://116.62.64.190:8080' //线上
-  const SERVERPATH = 'http://116.62.146.57:8080/mobile'; //借款端测试
+    const SERVERPATH = 'https://service.chaqianma.com' //线上
+//  const SERVERPATH = 'http://116.62.146.57:8080/mobile'; //借款端测试
   //    const SERVERPATH = 'http://192.168.199.166:8099' //胡磊
   let TAB_NAME_FORK = []
   export default {

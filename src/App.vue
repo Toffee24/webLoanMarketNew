@@ -326,13 +326,13 @@
               }
             }
             .infoRight {
-              width: 105px;
+              padding-right: 10px;
               .borrowNumber {
+                padding: 1px 2px;
                 border-radius: 4px;
                 height: 17px;
                 line-height: 17px;
                 text-align: center;
-                width: 90px;
                 border: 1px solid #0076ff;
                 font-size: 11px;
                 color: #0076ff;
